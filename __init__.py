@@ -71,6 +71,11 @@ def list():
     import matplotlib.pyplot as plt
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
+    
+    results= open("results.txt","w",enconding='utf-8')
+    L = str(NList)
+    file1.writelines(L)
+    file1.close()
 
     wordcloud.to_file('static/testing.jpg')
 
