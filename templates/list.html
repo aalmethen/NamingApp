@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+   <meta http-equiv="refresh" content="5">
+<div class="jumbotron">
+  <img src="{{url_for('static', filename='testing.jpg')}}" align="middle" class="rounded-pill">
+  <br>
+  <br>
+  <!--  {% for name in NList %}
+    <button class="btn btn-primary" type="submit">{{name}}</button>
+    {% endfor %} -->
+
+</div>
+{% endblock %}
