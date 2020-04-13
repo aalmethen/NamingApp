@@ -67,7 +67,7 @@ def list():
     text = arabic_reshaper.reshape(str(N2.query.all()))
     text = get_display(text)
     # Generate a word cloud image
-    wordcloud = WordCloud(background_color='White',font_path="static/arial").generate(text)
+    wordcloud = WordCloud(background_color='White',font_path="static/arial.ttf").generate(text)
     import matplotlib.pyplot as plt
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
