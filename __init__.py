@@ -72,7 +72,7 @@ def list():
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     
-    results= open("results.txt","w",enconding='utf-8')
+    results= open("results.txt","w",encoding='utf-8')
     L = str(NList)
     file1.writelines(L)
     file1.close()
