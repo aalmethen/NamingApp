@@ -74,7 +74,7 @@ def list():
     
     file1 = open("results.txt","w",encoding='utf-8')
     L = str(NList)
-    file1.writelines(L)
+    file1.write(L)
     file1.close()
 
     wordcloud.to_file('static/testing.jpg')
