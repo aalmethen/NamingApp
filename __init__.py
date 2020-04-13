@@ -8,7 +8,6 @@ from os import path
 from wordcloud import WordCloud
 import arabic_reshaper
 from bidi.algorithm import get_display
-import pandas as pd
 
 
 app = Flask(__name__)
