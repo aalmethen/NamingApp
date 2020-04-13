@@ -72,10 +72,6 @@ def list():
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     
-    file1 = open("results.txt","w",encoding='utf-8')
-    L = str(NList)
-    file1.write(L)
-    file1.close()
 
     wordcloud.to_file('static/testing.jpg')
 
