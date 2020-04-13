@@ -34,3 +34,4 @@ WTForms==2.1
 wordcloud==1.6.0
 arabic-reshaper==2.0.15
 python-bidi==0.4.2
+gunicorn== 19.9.0
