@@ -63,7 +63,6 @@ def index():
 @app.route('/list')
 def list():
 
-    NList = N2.query.limit(20).all()
     text = arabic_reshaper.reshape(str(N2.query.all()))
     text = get_display(text)
     # Generate a word cloud image
