@@ -32,7 +32,8 @@ def getApp():
 class N2(db.Model):
 
     __tablename__ = 'names'
-    name = db.Column(db.Text,primary_key = True)
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.Text)
 
     def __init__(self,name):
         self.name = name
