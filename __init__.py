@@ -33,7 +33,7 @@ class N2(db.Model):
 
     __tablename__ = 'names'
    
-    id = db.Column(db.Integer,primary_key = True)
+    number = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.Text)
     
 
