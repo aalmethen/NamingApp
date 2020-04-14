@@ -37,9 +37,9 @@ class N2(db.Model):
     name = db.Column(db.Text)
     
 
-    def __init__(self,name,id):
+    def __init__(self,name):
         self.name = name
-        self.id = id
+
 
     def __repr__(self):
         return self.name
