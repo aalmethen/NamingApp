@@ -17,29 +17,28 @@ app.config['SECRET_KEY'] = 'mysecretkey'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY'] = 'sql://'+os.path.join(basedir,'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite://'+os.path.join(basedir,'data.sqlite')
+app.config['SQLALCHEMY_DATABASE_URI'] =\
+    'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
+#os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 Migrate(app,db)
 
 def getApp():
     return app
-    
+
 ################################
 ##### Models creation ##########
 ################################
 class N2(db.Model):
 
     __tablename__ = 'names'
-   
-
-    name = db.Column(db.Text,primary_key = True)
-    
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.Text)
 
     def __init__(self,name):
         self.name = name
-
 
     def __repr__(self):
         return self.name
@@ -66,7 +65,7 @@ def index():
 @app.route('/list')
 def list():
 
-    NList =N2.query.limit(5).all()
+    NList=N2.query.limit(5).all()
     text = arabic_reshaper.reshape(str(N2.query.all()))
     text = get_display(text)
     # Generate a word cloud image
@@ -74,7 +73,7 @@ def list():
     import matplotlib.pyplot as plt
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
-    
+
 
     wordcloud.to_file('static/testing.jpg')
 
