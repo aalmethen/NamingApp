@@ -1,7 +1,7 @@
 import click
 from flask.cli import with_appcontext
 
-from app import db,N2
+from __init__ import db,N2
 
 @click.command(name='create_tables')
 @with_appcontext
